@@ -1,0 +1,27 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.test">
+
+    <!--
+        注意，声明这个manifest文件纯粹是为了使用访问网络权限。build的时候，会将lib模块的
+        manifest merge进来，但是不论lib中配置的package属性 还是当前配置的package=“com.test”
+        都不会生效，因为我在build.gradle中配置了testApplicationId "com.demon.ct.test"属性
+        这也是可以配置多包名的原因。
+
+        另外生成的测试报告在以下路径下：
+        open lib/build/outputs/reports/androidTests/connected/index.html
+
+        testOptions {
+            resultsDir = "$project.buildDir/test/results"
+        }
+        属性只是改变了测试结果的xml文件存放位置
+    -->
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        >
+    </application>
+
+</manifest>

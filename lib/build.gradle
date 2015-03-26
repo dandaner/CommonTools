@@ -9,7 +9,14 @@ android {
         targetSdkVersion 8
         versionCode 1
         versionName "1.0"
+
+//        testPackageName 'com.demon.ct.test'
+        testApplicationId "com.demon.ct.test"
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+        testHandleProfiling true
+        testFunctionalTest true
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -26,10 +33,15 @@ android {
             buildConfigField("String", "TAG", "\"dandan_d\"")
         }
     }
+
+    testOptions {
+        resultsDir = "$project.buildDir/test/results"
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
 }
 
 task("print buildTool Version") {
