@@ -31,3 +31,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
+
+task("print buildTool Version") {
+    println(rootProject.ext.buildToolsVersion)
+}

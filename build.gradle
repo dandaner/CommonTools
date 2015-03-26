@@ -14,7 +14,8 @@ buildscript {
 
 ext {
     compileSdkVersion = 21
-    buildToolsVersion = "21.1.1"
+    // System.env.CUSTOM_BUILDTOOLS 貌似找不到这个属性 但是samples里面都这样写？
+    buildToolsVersion = System.env.CUSTOM_BUILDTOOLS != null ? System.env.CUSTOM_BUILDTOOLS : "21.1.1"
 }
 
 allprojects {
