@@ -7,10 +7,6 @@ import com.demon.commontools.config.LibConfig;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-/**
- * @author demon.zhang
- * @time 15/3/25 下午3:48
- */
 public class LogUtils {
 
     private static final boolean LOG_ENBALE = LibConfig.LOG_ENABLE;
